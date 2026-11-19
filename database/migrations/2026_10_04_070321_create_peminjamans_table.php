@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('peminjamans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_menu');
-            $table->string('jenis');
-            $table->int('harga');
+            $table->foreignId('anggota_id')->constrained('anggotas')->cascadeOnDelete();
+            $table->foreignId('buku_id')->constrained('bukus')->cascadeOnDelete();
+            $table->date('tanggal_pinjam');
+            $table->date('tanggal_kembali')->nullable();
             $table->timestamps();
         });
     }
