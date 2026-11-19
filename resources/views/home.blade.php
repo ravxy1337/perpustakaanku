@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('judul', 'Beranda - Perpustakaan Online')
+@section('judul', 'Beranda - Perpustakaanku')
 
 @section('konten')
     <section class="beranda-hero" aria-labelledby="judul-beranda">
