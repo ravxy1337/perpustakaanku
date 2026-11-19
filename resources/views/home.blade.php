@@ -12,7 +12,7 @@
         <div class="beranda-lapisan"></div>
         <div class="beranda-teks">
             <p>Perpustakaan Onlineku</p>
-            <h2 id="judul-beranda">Selamat datang.</h2>
+            <h2 id="judul-beranda">Selamat datang semua nya</h2>
             <span>Temukan buku yang ingin kamu baca berikutnya.</span>
         </div>
     </section>
