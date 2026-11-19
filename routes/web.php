@@ -8,6 +8,24 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 // Public routes
+Route::get('/debug-check', function () {
+    try {
+        $db = \DB::connection()->getPdo();
+        $dbStatus = 'Connected to: ' . \DB::connection()->getDatabaseName();
+    } catch (\Throwable $e) {
+        $dbStatus = 'DB Error: ' . $e->getMessage();
+    }
+
+    return response()->json([
+        'status' => 'ok',
+        'env_app_env' => env('APP_ENV'),
+        'env_app_debug' => env('APP_DEBUG'),
+        'db_status' => $dbStatus,
+        'view_path' => config('view.compiled'),
+        'is_view_writable' => is_writable(config('view.compiled')),
+    ]);
+});
+
 Route::get('/', function () {
     return view('home');
 })->name('home');
